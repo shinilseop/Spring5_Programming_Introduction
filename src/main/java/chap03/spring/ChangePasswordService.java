@@ -1,4 +1,4 @@
-package chap03;
+package chap03.spring;
 
 public class ChangePasswordService {
     private MemberDao memberDao;

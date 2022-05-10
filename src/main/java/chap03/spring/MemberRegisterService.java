@@ -1,4 +1,4 @@
-package chap03;
+package chap03.spring;
 
 import java.time.LocalDateTime;
 
