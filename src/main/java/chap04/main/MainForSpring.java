@@ -1,6 +1,7 @@
-package chap04;
+package chap04.main;
 
 import chap04.config.AppConfImport;
+import chap04.config.AppCtx;
 import chap04.spring.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -15,9 +16,9 @@ public class MainForSpring {
     private static ApplicationContext ctx = null;
 
     public static void main(String[] args) throws IOException {
-//        ctx = new AnnotationConfigApplicationContext(AppCtx.class); // 설정 파일 1개일때
+        ctx = new AnnotationConfigApplicationContext(AppCtx.class); // 설정 파일 1개일때
 //        ctx = new AnnotationConfigApplicationContext(AppConf1.class, AppConf2.class); // 설정 파일 2개 이상일때
-        ctx = new AnnotationConfigApplicationContext(AppConfImport.class); // AppConfImport에 AppConf2를 Import 해놓았을때
+//        ctx = new AnnotationConfigApplicationContext(AppConfImport.class); // AppConfImport에 AppConf2를 Import 해놓았을때
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -86,7 +87,7 @@ public class MainForSpring {
         ChangePasswordService changePwdSvc = ctx.getBean("changePwdSvc", ChangePasswordService.class);
 
         try {
-            changePwdSvc.changePassword(arg[1], arg[2], arg[2]);
+            changePwdSvc.changePassword(arg[1], arg[2], arg[3]);
             System.out.println("암호를 변경했습니다.\n");
         } catch (MemberNotFoundException e) {
             System.out.println("존재하지 않는 이메일입니다.\n");
