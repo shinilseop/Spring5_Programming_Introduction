@@ -1,4 +1,4 @@
-package chap03;
+package chap03.main;
 
 import chap03.spring.ChangePasswordService;
 import chap03.spring.MemberDao;

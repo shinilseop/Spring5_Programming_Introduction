@@ -7,9 +7,7 @@ import java.time.format.DateTimeFormatter;
 public class MemberPrinter {
 
     private DateTimeFormatter dateTimeFormatter;
-
-
-
+    
     public void print(Member member) {
         if (dateTimeFormatter == null) {
             System.out.printf(
